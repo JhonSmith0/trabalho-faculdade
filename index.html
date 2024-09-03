@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Links</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: Poppins, sans-serif;
+            font-size: 1.6rem;
+            background-color: #f8f9fa;
+            color: #343a40;
+
+            padding-inline: 2rem;
+
+            padding-top: 5rem;
+
+            max-width: 70rem;
+            margin-inline: auto;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+
+        .links ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        article {
+            margin-block: 6rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        #contato h2 {
+            text-align: center;
+        }
+
+        fieldset {
+            border: none;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            margin-inline: auto;
+            border-radius: 1.2rem;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            padding: 1rem;
+            border-radius: 12px;
+            outline: none;
+            border: none;
+            border: solid 2px #adb5bd;
+            font-family: inherit;
+            background: #f1f3f5;
+        }
+
+        input:focus-within,
+        textarea:focus-within {
+            border: solid 2px #ced4da;
+            background: white;
+        }
+
+        form button {
+            background: #5c7cfa;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            padding: 1.2rem 2.4rem;
+            width: 100%;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: Poppins;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="links">
+        <ul>
+            <li>
+                <a href="#sobre-mim">Sobre mim</a>
+            </li>
+            <li>
+                <a href="#formacao">Formação</a>
+            </li>
+            <li>
+                <a href="#projetos">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato">Contato</a>
+            </li>
+        </ul>
+    </div>
+
+    <article id="sobre-mim">
+        <h2>Sobre mim</h2>
+        <p>Oi, eu sou o Nelson Rodrigues, tenho 20 anos e estou no 3º semestre de Engenharia de Software na Uninter.
+            Quando não estou mergulhado nos códigos e algoritmos, você me encontra na academia, pedalando na bicicleta
+            ou nadando na piscina. Sou um grande fã de atividades físicas e adoro me manter em movimento. Se você quiser
+            trocar ideias sobre programação, esportes ou qualquer outra coisa, é só me chamar!</p>
+    </article>
+
+    <article id="formacao">
+        <h2>Formação</h2>
+        <p>Estou no 3º semestre de Engenharia de Software na Uninter e falo português e inglês avançado. Atualmente,
+            estou aprendendo russo também. “Привет! Как дела?” (Olá! Como você está?) Se quiser trocar ideias sobre
+            programação, idiomas ou qualquer outro assunto, sinta-se à vontade para me chamar!
+        </p>
+    </article>
+
+    <article id="projetos">
+        <h2>Projetos</h2>
+        <ul>
+            <li>
+                <a target="_blank" href="https://github.com/JhonSmith0/Forkify-Project">Forkify</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://github.com/JhonSmith0/Bankist-Project">Bankist</a>
+            </li>
+        </ul>
+    </article>
+
+    <article id="contato">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+
+            <fieldset>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </article>
+
+
+    <script>
+        // Implementa o scroll suave após clicar no link
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
